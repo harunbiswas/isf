@@ -1,0 +1,163 @@
+.header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  box-shadow: $shadow;
+
+  top: 0;
+  z-index: 999;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .brand {
+    img {
+      width: 350px;
+      height: auto;
+    }
+  }
+
+  .nav {
+    width: 100%;
+
+    &-menu {
+      display: flex;
+      gap: 30px;
+
+      a {
+        font-size: 22px;
+        text-transform: uppercase;
+        position: relative;
+        color: $white;
+
+        &::after,
+        &.active {
+          content: "";
+          width: 100%;
+          height: 5px;
+          background-color: $primary;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          border-radius: 10px;
+          transform: scale(0);
+          transform-origin: center;
+          transition: 0.8s;
+        }
+
+        &:hover {
+          &::after,
+          &.active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  .selector {
+    position: relative;
+    border: 1px solid $tarnary;
+    border-radius: 4px;
+    padding: 10px;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: $white;
+
+      svg {
+        font-size: 14px;
+      }
+    }
+
+    &-items {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      height: max-content;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: $shadow;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      &.show {
+        visibility: visible;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: 22px;
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $secndary;
+  color: $white;
+  padding-top: 60px;
+  padding-bottom: 20px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &-menu,
+  &-contact,
+  .brand,
+  &-qrc {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    h4 {
+      font-size: 28px;
+      margin: 20px 0;
+    }
+
+    a {
+      color: $white;
+      font-size: 18px;
+      padding-bottom: 4px;
+      display: block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      display: block;
+      padding: 10px 0 5px;
+      font-size: 14px;
+    }
+  }
+
+  &-bottom {
+    a {
+      color: $tarnary;
+    }
+  }
+}

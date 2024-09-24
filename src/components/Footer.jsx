@@ -46,9 +46,9 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <span>
-            &copy; All rights reserved by <a href="/">Indian street food</a>.
-            Design & Develoved by{" "}
-            <a href="https://www.fiverr.com/hbrubel">Harun</a>.
+            &copy; All rights reserved by{" "}
+            <a href="/">Bhaarat QSR ( Thailand ) Co Ltd</a>. Design & Develoved
+            by <a href="https://www.fiverr.com/hbrubel">Harun</a>.
           </span>
         </div>
       </div>

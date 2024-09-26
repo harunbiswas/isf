@@ -23,10 +23,59 @@
     opacity: 0.8;
   }
 
-  .container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+  // slider
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slick-dots {
+    bottom: 20px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+
+      button {
+        &::before {
+          display: none !important;
+        }
+        display: block !important;
+        width: 100%;
+        height: 5px !important;
+        background-color: rgba($tarnary, 0.4);
+        border: none;
+        padding: 0;
+        border-radius: 1rem;
+        transition: 0.4s;
+      }
+
+      &.slick-active,
+      &:hover {
+        button {
+          background-color: rgba($tarnary, 1);
+        }
+      }
+    }
+  }
+
+  &-slide {
+    &-wrp {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      text-align: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 
   &-left,
@@ -62,10 +111,11 @@
     }
 
     &-wrp {
-      background-color: $tarnary;
+      background-color: $secndary;
       width: 500px;
       position: absolute;
-      height: 90vh;
+      height: max-content;
+      min-height: 82vh;
       top: 40px;
       display: flex;
       flex-direction: column;
@@ -77,9 +127,10 @@
 
     &-img {
       img {
-        width: 150%;
-        height: auto;
-        transform: translateX(-8%) translateY(-200px);
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+        transform: translateX(0) translateY(-100px);
       }
     }
 
@@ -90,6 +141,7 @@
       align-items: flex-start;
       padding: 0 20px;
       gap: 7px;
+      margin-top: -100px;
 
       strong {
         font-size: 28px;
@@ -177,20 +229,20 @@
       width: 100%;
       position: relative;
 
-      &::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background-color: $black;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.6;
-      }
+      // &::after {
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: $black;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   opacity: 0.6;
+      // }
 
       img {
         width: 100%;
-        height: auto;
+        height: 780px;
       }
     }
 
@@ -279,6 +331,8 @@
     font-size: 46px;
     padding-bottom: 60px;
   }
+
+  // slider
 
   .slick-arrow {
     display: none !important;

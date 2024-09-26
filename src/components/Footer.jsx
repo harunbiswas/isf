@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <Link href="/" className="brand">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/logo-1.jpg"}
             width={500}
             height={150}
             alt="Indian Street food"
@@ -18,14 +18,14 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul className="footer-menu-items">
             <li>
-              <Link href="/">Menus</Link>
+              <Link href="#menu">Menus</Link>
             </li>
             <li>
               <Link href="/">Trams & condition</Link>
             </li>
 
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="#contact">Locations</Link>
             </li>
           </ul>
         </div>
@@ -39,8 +39,14 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-qrc">
-          <h4>Qrc</h4>
-          <QRCode value={"https://www.example.com"} />
+          <h4>Share Experience</h4>
+          <a
+            href="http://vqr.vc/iPeHhJ8bM"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <QRCode value={"https://vqr.vc/iPeHhJ8bM"} />
+          </a>
         </div>
       </div>
       <div className="footer-bottom">

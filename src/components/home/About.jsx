@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="about">
+    <div id="about" className="about">
       <div className="container">
         <div className="about-left">
           <div className="img">
             <Image
-              src="https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/7.png"
+              src="/images/food/Samosa.jpg"
               width={200}
               height={320}
               alt=""
@@ -16,13 +16,13 @@ export default function About() {
           </div>
           <div className="img">
             <Image
-              src="https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/8.png"
+              src="/images/food/pani-puri.jpg"
               width={320}
               height={300}
               alt=""
             />{" "}
             <Image
-              src="https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/9.png"
+              src="/images/food/biriani.jpg"
               width={320}
               height={300}
               alt=""
@@ -30,19 +30,22 @@ export default function About() {
           </div>
         </div>
         <div className="about-right">
-          <h2>Something about Indian Street food</h2>
+          <h2>Imported spices and Basmati rice from India</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-            debitis modi magni facilis quo, pariatur quasi quidem maxime, unde
-            perferendis ex maiores beatae quia voluptas esse quos alias
-            necessitatibus adipisci!
+            Our commitment to authenticity extends to our ingredients. We source
+            the finest Indian spices and basmati rice directly from India,
+            ensuring a truly authentic taste experience. These premium
+            ingredients are the foundation of our flavorful dishes, bringing the
+            rich heritage of Indian cuisine to Bangkok.
           </p>
 
           <strong>
-            Sed feugiat justo at laoreet convallis. Maecenas ac aliquam turpis.
-            Ut aliquet leo ut gravida auctor.
+            Our mission is to introduce Bangkok to the vibrant and diverse
+            culinary heritage of India. We strive to capture the essence of
+            authentic Indian street food, bringing the unique and delicious
+            flavors of the subcontinent to the heart of Thailand.
           </strong>
-          <Link href="/" className="btn">
+          <Link href="#contact" className="btn">
             GO to shop
           </Link>
         </div>

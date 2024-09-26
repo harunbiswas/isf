@@ -9,21 +9,15 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 37.7749, // Default latitude
-  lng: -122.4194, // Default longitude
+  lat: 13.675673947066162, // Default latitude
+  lng: 100.640691795568, // Default longitude
 };
 
 const Map = () => {
   return (
     <LoadScript googleMapsApiKey={"AIzaSyDYNu6tHPINrxFP7-OlbGRTi0mNpn06nMw"}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
         <Marker position={center} />
-        <Marker
-          position={{
-            lat: 36.7849, // Default latitude
-            lng: -121.4194, // Default longitude
-          }}
-        />
       </GoogleMap>
     </LoadScript>
   );

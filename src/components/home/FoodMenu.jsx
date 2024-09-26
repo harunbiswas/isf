@@ -4,63 +4,63 @@ import Link from "next/link";
 export default function FoodMenu() {
   const menus = [
     {
-      img: "https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/4.png",
-      title: "Beef",
-      subTitle: "Big Burger",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa soluta rem veniam aperiam, cupiditate quisquam.",
+      img: "/images/Food images for foodtruck/Samosa1.png",
+      title: "Samosa",
+      subTitle: "Chicken Samosa",
+      text: "A crispy, golden-brown pastry filled with a savory mixture of minced chicken, spices, and herbs. The chicken is cooked to perfection and seasoned with aromatic Indian flavors, creating a delicious and satisfying snack or appetizer.",
       price: 15,
     },
     {
-      img: "https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/2.png",
-      title: "Beef",
-      subTitle: "Big Burger",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa soluta rem veniam aperiam, cupiditate quisquam.",
+      img: "/images/Food images for foodtruck/Samosa2.png",
+      title: "Samosa",
+      subTitle: "Mixed Vegetable Samosa",
+      text: "A vegetarian delight, this samosa is filled with a vibrant blend of mixed vegetables, including bell peppers, carrots, and potatoes. The vegetables are seasoned with a medley of Indian spices, offering a flavorful and healthy option.",
       price: 15,
     },
     {
-      img: "https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/2.png",
-      title: "Beef",
-      subTitle: "Big Burger",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa soluta rem veniam aperiam, cupiditate quisquam.",
+      img: "/images/Food images for foodtruck/Biryani2.png",
+      title: "Chicken",
+      subTitle: "Chicken Lover Set",
+      text: "Savor our Chicken Lover set, a hearty and flavorful meal for two. Enjoy a generous portion of aromatic Indian Chicken Biryani, paired with two crispy Chicken Samosas. Quench your thirst with your choice of refreshing Masala Chai or tangy Mango. All this for just 239 THB!",
+      price: 15,
+    },
+    {
+      img: "/images/Food images for foodtruck/Panipuri2.png",
+      title: "Pani Puri",
+      subTitle: "A Flavor Explosion",
+      text: "Indulge in the tantalizing experience of Pani Puri, a beloved Indian street food. These crispy, hollow spheres are filled with a tangy and sweet tamarind water, and topped with a medley of flavorful ingredients.",
       price: 15,
     },
   ];
   return (
-    <div className="food-menu">
+    <div id="menu" className="food-menu">
       <div className="container">
         <div className="food-menu-offers">
           <div className="food-menu-offer">
             <div className="img">
               <Image
-                src="https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/5.jpg"
+                src="/images/offer-1.jpg"
                 width={500}
                 height={500}
                 alt="Indian street food"
               />
             </div>
-            <div className="content">
+            {/* <div className="content">
               <strong>-20%</strong>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Aliquam praesentium odit dolorem quasi dignissimos nobis,
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="food-menu-offer">
             <div className="img">
               <Image
-                src="https://rayoflightthemes.com/htmltemplates/burgos_street_food_html5_template/burgos_html/images/6.jpg"
+                src="/images/offer-2.jpg"
                 width={500}
                 height={500}
                 alt="Indian street food"
               />
-            </div>
-            <div className="content">
-              <strong>Free Delivery</strong>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-              <Link className="btn" href="/">
-                Find Location
-              </Link>
             </div>
           </div>
         </div>
@@ -80,13 +80,10 @@ export default function FoodMenu() {
               <div className="food-menu-item-right">
                 <h2>{item?.title}</h2>
                 <strong>{item?.subTitle}</strong>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                  soluta rem veniam aperiam, cupiditate ab quisquam.
-                </p>
+                <p>{item?.text}</p>
                 <div className="bottom">
                   <strong className="price">${item?.price}</strong>
-                  <Link href="/" className="btn">
+                  <Link href="#contact" className="btn">
                     GO to shop
                   </Link>
                 </div>

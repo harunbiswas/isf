@@ -39,7 +39,7 @@ export default function Product() {
         <h2 className="title">Our Products</h2>
         <div className="product-wrp">
           {products?.map((product, i) => (
-            <div className="product-item">
+            <div key={i} className="product-item">
               <Image
                 src={product?.img}
                 alt={product?.name}

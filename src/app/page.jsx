@@ -6,6 +6,11 @@ import FoodMenu from "@/components/home/FoodMenu";
 import Product from "@/components/home/Product";
 import Testimonials from "@/components/home/Testimonials";
 
+export const metadata = {
+  title: "Indian street food",
+  description: "Best quality indian food",
+};
+
 export default function Home() {
   return (
     <div className="home">

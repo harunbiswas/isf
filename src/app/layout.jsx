@@ -1,22 +1,25 @@
-import Header from "@/components/Header";
-
+"use client";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Social from "@/components/home/Social";
+import { usePathname } from "next/navigation";
 import "../sass/style.scss";
 
-export const metadata = {
-  title: "Indian street food",
-  description: "Best quality indian food",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+
+  const isAdminRoute =
+    pathname.startsWith("/admin") || pathname.startsWith("/login");
+
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Social />
-        <Footer />
+        <main>
+          {!isAdminRoute && <Header />}
+          {children}
+          {!isAdminRoute && <Social />}
+          {!isAdminRoute && <Footer />}
+        </main>
       </body>
     </html>
   );

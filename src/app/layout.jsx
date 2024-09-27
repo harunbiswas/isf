@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 
 import Footer from "@/components/Footer";
+import Social from "@/components/home/Social";
 import "../sass/style.scss";
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <Social />
         <Footer />
       </body>
     </html>

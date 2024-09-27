@@ -30,8 +30,6 @@ export default function Menu() {
 
   const [activeSection, setActiveSection] = useState("");
 
-  console.log(activeSection);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100; // Add offset to account for header height

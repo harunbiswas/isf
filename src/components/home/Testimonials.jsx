@@ -3,6 +3,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import Map from "./Map";
 
 export default function Testimonials() {
   const testimonials = [
@@ -58,18 +59,24 @@ export default function Testimonials() {
   return (
     <div id="testimonials" className="testimonials">
       <div className="container">
-        <h2 className="title">Our Customer says</h2>
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonials-item ">
-              <div className="testimonials-item-body">
-                <p className="">{testimonial?.message}</p>
-                <h4 className="">{testimonial.name}</h4>
-                <span className="">{testimonial.role}</span>
+        <div className="testimonials-slider">
+          {" "}
+          <h2 className="title">Our Customer says</h2>
+          <Slider {...settings}>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonials-item ">
+                <div className="testimonials-item-body">
+                  <p className="">{testimonial?.message}</p>
+                  <h4 className="">{testimonial.name}</h4>
+                  <span className="">{testimonial.role}</span>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
+        <div className="location-map">
+          <Map />
+        </div>
       </div>
     </div>
   );

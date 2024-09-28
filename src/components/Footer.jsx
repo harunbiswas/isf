@@ -44,6 +44,7 @@ export default function Footer() {
             href="http://vqr.vc/iPeHhJ8bM"
             target="_blank"
             rel="noopener noreferrer"
+            className="qrc"
           >
             <QRCode value={"https://vqr.vc/iPeHhJ8bM"} />
           </a>

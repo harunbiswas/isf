@@ -16,8 +16,8 @@ export default function Home() {
     <div className="home">
       <Banner />
       <About />
-      <FoodMenu />
       <Product />
+      <FoodMenu />
       <Testimonials />
       <Contact />
       <Cta />

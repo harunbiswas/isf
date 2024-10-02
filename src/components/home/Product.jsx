@@ -39,7 +39,7 @@ export default function Product() {
   ];
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 4,
@@ -50,24 +50,21 @@ export default function Product() {
   };
   return (
     <div className="product">
-      <div className="container">
-        <h2 className="title">Our Products</h2>
-        <div className="product-wrp">
-          <Slider {...settings}>
-            {products?.map((product, i) => (
-              <div key={i} className="product-item">
-                <Image
-                  src={product?.img}
-                  alt={product?.name}
-                  width={200}
-                  height={200}
-                />
-                <h4>{product.name}</h4>
-                <p>{product?.text}</p>
-              </div>
-            ))}
-          </Slider>
-        </div>
+      <div className="product-wrp">
+        <Slider {...settings}>
+          {products?.map((product, i) => (
+            <div key={i} className="product-item">
+              <Image
+                src={product?.img}
+                alt={product?.name}
+                width={200}
+                height={200}
+              />
+              <h4>{product.name}</h4>
+              <p>{product?.text}</p>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

@@ -158,6 +158,7 @@
 // about
 .about {
   padding: 130px 0 60px;
+  background-color: rgba($tarnary, 0.03);
 
   .container {
     display: flex;
@@ -211,12 +212,42 @@
 
 // food menu
 .food-menu {
-  padding: 100px 0;
+  padding: 60px 0 0;
 
   &-offers {
     display: flex;
     padding-bottom: 100px;
     gap: 20px;
+  }
+
+  &-cat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 40px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: $border;
+      padding: 2cqh;
+      border-radius: 12px;
+      transition: 0.4s;
+
+      &:hover,
+      &.active {
+        border-color: $secndary;
+      }
+
+      img {
+        width: 100%;
+        height: 150px;
+      }
+    }
   }
 
   &-offer {
@@ -268,7 +299,6 @@
   &-wrp {
     display: flex;
     flex-direction: column;
-    gap: 80px;
   }
 
   &-item {
@@ -322,15 +352,20 @@
 // testimonials
 .testimonials {
   min-height: 500px;
-  background-color: $secndary;
+  background-color: rgba($tarnary, 0.03);
   padding: 100px 0;
-  color: $white;
+  color: $black;
 
   .container {
     display: grid;
     grid-template-columns: 49% 49%;
     gap: 2%;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .title {
+    padding-bottom: 40px !important;
+    font-weight: 400;
   }
 
   &-slider {
@@ -427,7 +462,7 @@
 
 // products
 .product {
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 
   // slider
   .slick-arrow {
@@ -501,5 +536,69 @@
       padding: 0 15px;
       font-size: 14px;
     }
+  }
+}
+
+// gallery
+.gallery {
+  background-color: rgba($tarnary, 0.03);
+  padding: 80px 0;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .gridItem {
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .gridItem:hover {
+    transform: scale(1.02);
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modalContent {
+    position: relative;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 8px;
+  }
+
+  .modalContent img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
   }
 }

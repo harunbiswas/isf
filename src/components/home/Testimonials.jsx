@@ -57,7 +57,7 @@ export default function Testimonials() {
     pauseOnHover: true,
   };
   return (
-    <div id="testimonials" className="testimonials">
+    <div id="shop" className="testimonials">
       <div className="container">
         <div className="testimonials-slider">
           {" "}
@@ -75,6 +75,7 @@ export default function Testimonials() {
           </Slider>
         </div>
         <div className="location-map">
+          <h2 className="title">Our Vendor</h2>
           <Map />
         </div>
       </div>

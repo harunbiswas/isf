@@ -15,16 +15,20 @@ export default function Menu() {
     },
     {
       url: "#menu",
-      name: "Menu",
+      name: "Product",
     },
 
     {
-      url: "#testimonials",
-      name: "Review",
+      url: "#shop",
+      name: "Shop",
     },
     {
-      url: "#contact",
-      name: "Contact",
+      url: "#offer",
+      name: "Offer",
+    },
+    {
+      url: "#gallery",
+      name: "Gallery",
     },
   ];
 

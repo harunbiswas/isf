@@ -1,9 +1,8 @@
 import About from "@/components/home/About";
 import Banner from "@/components/home/Banner";
 import Contact from "@/components/home/Contact";
-import Cta from "@/components/home/Cta";
 import FoodMenu from "@/components/home/FoodMenu";
-import Product from "@/components/home/Product";
+import Gallery from "@/components/home/Gallery";
 import Testimonials from "@/components/home/Testimonials";
 
 export const metadata = {
@@ -16,11 +15,11 @@ export default function Home() {
     <div className="home">
       <Banner />
       <About />
-      <Product />
+
       <FoodMenu />
       <Testimonials />
       <Contact />
-      <Cta />
+      <Gallery />
     </div>
   );
 }

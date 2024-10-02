@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <div id="contact" className="contact">
+    <div id="offer" className="contact">
       <div className="container">
         <h2 className="title">Offers</h2>
         <div className="food-menu-offers">

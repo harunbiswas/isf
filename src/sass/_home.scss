@@ -373,10 +373,11 @@
   }
 
   .separator {
-    width: 1px;
+    width: 3px;
     height: calc(100% - 80px);
-    background-color: rgba($black, 0.4);
+    background-color: rgba($tarnary, 0.4);
     margin-top: 80px;
+    border-radius: 1red;
   }
 
   .location-map {

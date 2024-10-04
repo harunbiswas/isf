@@ -17,6 +17,7 @@ export default function Banner() {
     autoplaySpeed: 3000,
     pauseOnHover: true,
   };
+
   return (
     <div id="home" className="banner">
       <div className="container">

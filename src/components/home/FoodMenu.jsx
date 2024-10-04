@@ -50,6 +50,7 @@ export default function FoodMenu() {
                 (item?.id === product?.id && "active") || ""
               }`}
             >
+              <h4>{product?.title}</h4>
               <div className="food-menu-cat-item-img">
                 <Image
                   src={product?.img}
@@ -58,7 +59,6 @@ export default function FoodMenu() {
                   alt="Indian street food"
                 />
               </div>
-              <h4>{product?.title}</h4>
             </Link>
           ))}
         </div>

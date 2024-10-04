@@ -55,6 +55,8 @@ export default function Testimonials() {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    vertical: true, // Enable vertical sliding
+    verticalSwiping: true, // Smooth vertical swipe experience
   };
   return (
     <div id="shop" className="testimonials">
@@ -74,6 +76,7 @@ export default function Testimonials() {
             ))}
           </Slider>
         </div>
+        <div className="separator"></div>
         <div className="location-map">
           <h2 className="title">Our Vendor</h2>
           <Map />

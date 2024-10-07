@@ -8,13 +8,31 @@
   z-index: 999;
   transform: translateY(0); // Start with no vertical transformation
 
+  @media screen and (max-width: $lg) {
+    background-color: rgba($color: $black, $alpha: 0.5);
+    height: 114px;
+    width: 100vw !important;
+  }
+
   &.show {
     background-color: rgba($color: $black, $alpha: 0.5); // Add background color
     transform: translateY(0); // Reset transform to keep it at the top
   }
 
+  @media screen and (max-width: $lg) {
+    width: 100%;
+  }
+
   &.hide {
     transform: translateY(-100%); // Slide the header up and out of view
+
+    @media screen and (max-width: $lg) {
+      width: 280px;
+      transform: translateY(0);
+      background-color: rgba($color: $black, $alpha: 0.5);
+      left: 0;
+      width: 100%;
+    }
   }
 
   .container {
@@ -22,6 +40,22 @@
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+
+    @media screen and (max-width: $lg) {
+      gap: 10px;
+    }
+
+    .toggle {
+      display: none;
+
+      @media screen and (max-width: $lg) {
+        display: flex;
+        background-color: transparent;
+        color: $tarnary;
+        font-size: 24px;
+        z-index: 999;
+      }
+    }
   }
 
   .brand {
@@ -37,6 +71,24 @@
     &-menu {
       display: flex;
       gap: 30px;
+
+      @media screen and (max-width: $lg) {
+        width: 200px;
+        position: fixed;
+        left: -210px;
+        top: 114px;
+        flex-direction: column;
+        height: 100vh;
+        background-color: rgba($black, 0.5);
+        padding: 40px;
+        gap: 20px;
+        z-index: 999;
+        transition: 0.5s;
+
+        &.show {
+          left: 0;
+        }
+      }
 
       a {
         font-size: 16px;
@@ -128,6 +180,10 @@
     display: flex;
     justify-content: space-between;
     gap: 30px;
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+    }
   }
 
   &-menu,

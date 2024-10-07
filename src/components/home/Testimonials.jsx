@@ -78,7 +78,7 @@ export default function Testimonials() {
         </div>
         <div className="separator"></div>
         <div className="location-map">
-          <h2 className="title">Our Vendor</h2>
+          <h2 className="title">Our Presence</h2>
           <Map />
         </div>
       </div>

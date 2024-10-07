@@ -2,13 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { FaBars } from "react-icons/fa";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lng from "./Lng";
 import Menu from "./Menu";
 
 export default function Header() {
   const [active, setActive] = useState(true);
+  const [isToggle, setIsToggle] = useState(false);
+  const ref = useRef();
 
   useEffect(() => {
     let lastScrollY = window.scrollY; // Initialize the last scroll position
@@ -38,6 +41,23 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the click is outside the dropdown
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsToggle(false);
+      }
+    };
+
+    // Attach event listener when the component is mounted
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup event listener on unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header
       className={`header ${
@@ -53,8 +73,16 @@ export default function Header() {
             alt="Indian Street food"
           />
         </Link>
-        <Menu />
+        <Menu refr={ref} isToggle={isToggle} setIsToggle={setIsToggle} />
         <Lng />
+        <button
+          onClick={() => {
+            setIsToggle(!isToggle);
+          }}
+          className="toggle btn"
+        >
+          <FaBars />
+        </button>
       </div>
     </header>
   );

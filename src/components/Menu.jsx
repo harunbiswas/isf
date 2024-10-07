@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Menu() {
+export default function Menu({ isToggle, setIsToggle, refr }) {
   const menus = [
     {
       url: "#home",
@@ -65,10 +65,13 @@ export default function Menu() {
 
   return (
     <nav className="nav">
-      <ul className="nav-menu">
+      <ul ref={refr} className={`nav-menu ${(isToggle && "show") || ""}`}>
         {menus?.map((item, i) => (
           <li key={i}>
             <Link
+              onClick={() => {
+                setIsToggle(false);
+              }}
               className={activeSection === item.url ? "active" : ""}
               href={item?.url}
             >

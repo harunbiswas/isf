@@ -1,5 +1,6 @@
 "use client";
 
+import i18next from "i18next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -41,7 +42,7 @@ export default function Menu({ isToggle, setIsToggle, refr }) {
 
   useEffect(() => {
     setMenus(t("menus", { returnObjects: true }));
-  }, [localStorage.getItem("lng")]);
+  }, [i18next.language]);
 
   return (
     <nav className="nav">

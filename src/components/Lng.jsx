@@ -26,7 +26,7 @@ export default function Lng() {
 
   // Effect to set language on initial load
   useEffect(() => {
-    i18next.changeLanguage(localStorage.getItem("lng"));
+    i18next.changeLanguage(i18next.language);
   }, []);
 
   const handleClickOutside = (event) => {
@@ -43,6 +43,7 @@ export default function Lng() {
     };
   }, []);
 
+  console.log(i18next.language);
   return (
     <div ref={boxRef} className="selector">
       <span
@@ -50,7 +51,7 @@ export default function Lng() {
           setIsShow(!isShow);
         }}
       >
-        {lng === "th" ? items[0].emoji : items[1].emoji}
+        {i18next.language === "th" ? items[0].emoji : items[1].emoji}
         <div className="icon">
           {!isShow ? <TfiAngleDown /> : <TfiAngleUp />}
         </div>

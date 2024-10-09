@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Product from "./Product";
 
 export default function FoodMenu() {
+  const { t } = useTranslation();
   const menus = [
     {
       id: 1,
@@ -36,7 +38,7 @@ export default function FoodMenu() {
   return (
     <div id="menu" className="food-menu">
       <div className="container">
-        <h2 className="title">Our Products</h2>
+        <h2 className="title">{t("textProducts")}</h2>
         <div className="food-menu-cat">
           {menus?.map((product, i) => (
             <Link

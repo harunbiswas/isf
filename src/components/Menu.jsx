@@ -2,35 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Menu({ isToggle, setIsToggle, refr }) {
-  const menus = [
-    {
-      url: "#home",
-      name: "Home",
-    },
-    {
-      url: "#about",
-      name: "About",
-    },
-    {
-      url: "#menu",
-      name: "Product",
-    },
-
-    {
-      url: "#shop",
-      name: "Shop",
-    },
-    {
-      url: "#offer",
-      name: "Offer",
-    },
-    {
-      url: "#gallery",
-      name: "Gallery",
-    },
-  ];
+  const { t } = useTranslation();
+  const [menus, setMenus] = useState([]);
 
   const [activeSection, setActiveSection] = useState("");
 
@@ -63,10 +39,14 @@ export default function Menu({ isToggle, setIsToggle, refr }) {
     };
   }, [menus]);
 
+  useEffect(() => {
+    setMenus(t("menus", { returnObjects: true }));
+  }, [localStorage.getItem("lng")]);
+
   return (
     <nav className="nav">
       <ul ref={refr} className={`nav-menu ${(isToggle && "show") || ""}`}>
-        {menus?.map((item, i) => (
+        {menus.map((item, i) => (
           <li key={i}>
             <Link
               onClick={() => {

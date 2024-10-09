@@ -6,7 +6,13 @@ const nextConfig = {
       },
       images: {
         domains: ['rayoflightthemes.com'],
-      },
+      }, 
+      
+      webpack: (config, { isServer, webpack }) => {
+        return config;
+      }
+
+   
 };
 
 export default nextConfig;

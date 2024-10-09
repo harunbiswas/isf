@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -45,6 +46,8 @@ export default function Testimonials() {
     },
   ];
 
+  const { t } = useTranslation();
+
   const settings = {
     dots: true,
     infinite: true,
@@ -58,12 +61,13 @@ export default function Testimonials() {
     vertical: true, // Enable vertical sliding
     verticalSwiping: true, // Smooth vertical swipe experience
   };
+
   return (
     <div id="shop" className="testimonials">
       <div className="container">
         <div className="testimonials-slider">
           {" "}
-          <h2 className="title">Our Customer says</h2>
+          <h2 className="title">{t("textCustomer")}</h2>
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonials-item ">
@@ -78,7 +82,7 @@ export default function Testimonials() {
         </div>
         <div className="separator"></div>
         <div className="location-map">
-          <h2 className="title">Our Presence</h2>
+          <h2 className="title">{t("textPresence")}</h2>
           <Map />
         </div>
       </div>

@@ -15,7 +15,6 @@ export default function Home() {
     <div className="home">
       <Banner />
       <About />
-
       <FoodMenu />
       <Testimonials />
       <Contact />

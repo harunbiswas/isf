@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import QRCode from "react-qr-code";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="container">
@@ -15,31 +17,31 @@ export default function Footer() {
           />
         </Link>
         <div className="footer-menu">
-          <h4>Quick Links</h4>
+          <h4>{t("textQuick")}</h4>
           <ul className="footer-menu-items">
             <li>
-              <Link href="#menu">Menus</Link>
+              <Link href="#menu">{t("textMenus")}</Link>
             </li>
             <li>
-              <Link href="/">Trams & condition</Link>
+              <Link href="/">{t("textTrams")}</Link>
             </li>
 
             <li>
-              <Link href="#contact">Locations</Link>
+              <Link href="#contact">{t("textLocations")}</Link>
             </li>
           </ul>
         </div>
         <div className="footer-contact">
-          <h4>Contacts</h4>
+          <h4>{t("textContacts")}</h4>
           <div className="content">
-            <span>Work time</span>
-            <strong>Monday - Friday 11:00-00:0</strong>
-            <span>address</span>
-            <strong>LA, Vehicula Street, 58</strong>
+            <span>{t("textWork")}</span>
+            <strong>{t("textTime")}</strong>
+            <span>{t("textAddress")}</span>
+            <strong>{t("textAdd")}</strong>
           </div>
         </div>
         <div className="footer-qrc">
-          <h4>Share Experience</h4>
+          <h4>{t("textContacts")}</h4>
           <a
             href="http://vqr.vc/iPeHhJ8bM"
             target="_blank"

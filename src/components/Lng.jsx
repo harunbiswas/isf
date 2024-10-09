@@ -1,23 +1,35 @@
 "use client";
 
+import i18next from "i18next";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 
 export default function Lng() {
   const boxRef = useRef(null);
+  const router = useRouter();
+  const pathname = usePathname();
   const items = [
-    { emoji: "🇺🇸", name: "en" },
     { emoji: "🇹🇭", name: "th" },
+    { emoji: "🇺🇸", name: "en" },
   ];
-  const [lng, setLan] = useState("");
+
+  // Initialize the language state from local storage
+  const initialLanguage = localStorage.getItem("lng") || items[0].name;
+  const [lng, setLan] = useState(initialLanguage);
   const [isShow, setIsShow] = useState(false);
 
+  // Change language function
+  const changeLanguage = (language) => {
+    i18next.changeLanguage(language); // Change i18next language
+    setLan(language); // Update state
+    localStorage.setItem("lng", language); // Update local storage
+  };
+
+  // Effect to set language on initial load
   useEffect(() => {
-    if (!localStorage.getItem("lng")) {
-      localStorage.setItem("lng", items[0].name);
-    }
-    localStorage.setItem("lng", lng);
-  }, [lng]);
+    i18next.changeLanguage(localStorage.getItem("lng"));
+  }, []);
 
   const handleClickOutside = (event) => {
     if (boxRef.current && !boxRef.current.contains(event.target)) {
@@ -40,21 +52,21 @@ export default function Lng() {
           setIsShow(!isShow);
         }}
       >
-        {(lng === "en" && items[0].emoji) || items[1].emoji}
+        {lng === "en" ? items[1].emoji : items[0].emoji}
         <div className="icon">
-          {(!isShow && <TfiAngleDown />) || <TfiAngleUp />}
+          {!isShow ? <TfiAngleDown /> : <TfiAngleUp />}
         </div>
       </span>
-      <ul className={`selector-items ${(isShow && "show") || ""}`}>
-        {items?.map((item, i) => (
+      <ul className={`selector-items ${isShow ? "show" : ""}`}>
+        {items.map((item, i) => (
           <li key={i}>
             <button
               onClick={() => {
-                setLan(item?.name);
+                changeLanguage(item.name); // Change language when button is clicked
                 setIsShow(false);
               }}
             >
-              {item?.emoji}
+              {item.emoji}
             </button>
           </li>
         ))}

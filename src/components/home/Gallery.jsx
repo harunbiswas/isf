@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
   const images = [
     { id: 1, src: "/images/food/D8N_1792.jpg", alt: "Image 1" },
@@ -30,7 +32,7 @@ const Gallery = () => {
   return (
     <div id="gallery" className="gallery">
       <div className="container">
-        <h2 className="title">Photo Gallery</h2>
+        <h2 className="title">{t("textGallery")}</h2>
 
         <div className="grid">
           {images.map(

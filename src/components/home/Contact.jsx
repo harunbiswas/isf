@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <div id="offer" className="contact">
       <div className="container">
-        <h2 className="title">Offers</h2>
+        <h2 className="title">{t("textOffers")}</h2>
         <div className="food-menu-offers">
           <div className="food-menu-offer">
             <div className="img">

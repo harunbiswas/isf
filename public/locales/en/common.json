@@ -1,0 +1,51 @@
+{
+  "timeing": "From 11 Am to 12 pm",
+  "title": "Best Food",
+  "disctiption": "Our commitment to authenticity extends to our ingredients. We source the finest Indian spices and basmati rice directly from India, ensuring a truly authentic taste experience. These premium ingredients are the foundation of our flavorful dishes, bringing the rich heritage of Indian cuisine to Bangkok.",
+  "btnText": "Find store",
+  "aboutTitle": "Imported spices and Basmati rice from India",
+  "aboutDis": "Our commitment to authenticity extends to our ingredients. We source the finest Indian spices and basmati rice directly from India, ensuring a truly authentic taste experience. These premium ingredients are the foundation of our flavorful dishes, bringing the rich heritage of Indian cuisine to Bangkok.",
+  "aboutMisson": "Our mission is to introduce Bangkok to the vibrant and diverse culinary heritage of India. We strive to capture the essence of authentic Indian street food, bringing the unique and delicious flavors of the subcontinent to the heart of Thailand.",
+  "aboutBtnText": "Go to shop",
+  "textProducts": "Our Products",
+  "textPresence": "Our Presence",
+  "textCustomer": "Our Customer says",
+  "textOffers": "Offers",
+  "textGallery": "Photo Gallery",
+  "menus": [
+    {
+      "url": "#home",
+      "name": "Home"
+    },
+    {
+      "url": "#about",
+      "name": "About"
+    },
+    {
+      "url": "#menu",
+      "name": "Product"
+    },
+    {
+      "url": "#shop",
+      "name": "Shop"
+    },
+    {
+      "url": "#offer",
+      "name": "Offer"
+    },
+    {
+      "url": "#gallery",
+      "name": "Gallery"
+    }
+  ],
+  "textQuick": "Quick Links",
+  "textContacts": "Contacts",
+  "textExperience": "Share Experience",
+  "textMenus": "Menus",
+  "textTrams": "Trams & condition",
+  "textLocations": "Locations",
+  "textWork": "Work time",
+  "textTime": "Monday - Friday 11:00-00:0",
+  "textAddress": "address",
+  "textAdd": "LA, Vehicula Street, 58"
+}

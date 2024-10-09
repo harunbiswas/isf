@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -18,6 +19,8 @@ export default function Banner() {
     pauseOnHover: true,
   };
 
+  const { t } = useTranslation();
+
   return (
     <div id="home" className="banner">
       <div className="container">
@@ -25,18 +28,11 @@ export default function Banner() {
           <div className="banner-slide">
             <div className="banner-slide-wrp">
               <div className="banner-left">
-                <strong>From 11 Am to 12 pm</strong>
-                <h1>Best Foods</h1>
-                <p>
-                  Our commitment to authenticity extends to our ingredients. We
-                  source the finest Indian spices and basmati rice directly from
-                  India, ensuring a truly authentic taste experience. These
-                  premium ingredients are the foundation of our flavorful
-                  dishes, bringing the rich heritage of Indian cuisine to
-                  Bangkok.
-                </p>
+                <strong>{t("timeing")}</strong>
+                <h1>{t("title")}</h1>
+                <p>{t("disctiption")}</p>
                 <Link className="btn" href="/">
-                  Find Store
+                  {t("btnText")}
                 </Link>
               </div>
               <div className="banner-right">

@@ -2,10 +2,14 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Social from "@/components/home/Social";
+import "../../i18n";
+
 import { usePathname } from "next/navigation";
+
+import LanguageSync from "@/components/home/LanguageSync";
 import "../sass/style.scss";
 
-export default function RootLayout({ children }) {
+function RootLayout({ children }) {
   const pathname = usePathname();
 
   const isAdminRoute =
@@ -15,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <main>
+          <LanguageSync />
           {!isAdminRoute && <Header />}
           {children}
           {!isAdminRoute && <Social />}
@@ -24,3 +29,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export default RootLayout;

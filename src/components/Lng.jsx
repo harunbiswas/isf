@@ -1,14 +1,12 @@
 "use client";
 
 import i18next from "i18next";
-import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 
 export default function Lng() {
   const boxRef = useRef(null);
-  const router = useRouter();
-  const pathname = usePathname();
+
   const items = [
     { emoji: "🇹🇭", name: "th" },
     { emoji: "🇺🇸", name: "en" },

@@ -1,3 +1,5 @@
+"use client";
+
 import i18next from "i18next";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";

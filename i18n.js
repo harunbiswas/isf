@@ -4,16 +4,21 @@ import { initReactI18next } from 'react-i18next';
 import en from './public/locales/en/common.json';
 import th from './public/locales/th/common.json';
 
+
+const defaultLng = 'en';
+
+// Get the language from localStorage or fallback to default
+
+
 i18next
   .use(initReactI18next)
   .init({
     resources: {
-        en: { translation: en },
-        th: { translation: th },
-      
-      },
-    lng: localStorage.getItem('lng'), 
-    fallbackLng: 'en', // Fallback language
+      en: { translation: en },
+      th: { translation: th },
+    },
+   
+    fallbackLng: defaultLng, // Fallback language
     supportedLngs: ['en', 'th'],
     debug: true,
     interpolation: {

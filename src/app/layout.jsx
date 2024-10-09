@@ -1,13 +1,15 @@
 "use client";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Social from "@/components/home/Social";
-import "../../i18n";
-
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-
-import LanguageSync from "@/components/home/LanguageSync";
+import "../../i18n";
 import "../sass/style.scss";
+
+// Dynamically import components with SSR disabled
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
+const Header = dynamic(() => import("@/components/Header"), { ssr: false });
+const Social = dynamic(() => import("@/components/home/Social"), {
+  ssr: false,
+});
 
 function RootLayout({ children }) {
   const pathname = usePathname();
@@ -19,12 +21,11 @@ function RootLayout({ children }) {
     <html lang="en">
       <body>
         <main>
-          <LanguageSync />
           {!isAdminRoute && <Header />}
           {children}
           {!isAdminRoute && <Social />}
           {!isAdminRoute && <Footer />}
-        </main>
+        </main>{" "}
       </body>
     </html>
   );

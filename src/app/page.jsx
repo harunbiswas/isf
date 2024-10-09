@@ -1,27 +1,14 @@
-import dynamic from "next/dynamic";
+import About from "@/components/home/About";
+import Banner from "@/components/home/Banner";
+import Contact from "@/components/home/Contact";
+import FoodMenu from "@/components/home/FoodMenu";
+import Gallery from "@/components/home/Gallery";
+import Testimonials from "@/components/home/Testimonials";
 
 export const metadata = {
   title: "Indian street food",
   description: "Best quality Indian food",
 };
-
-// Dynamically import components with SSR disabled
-const Banner = dynamic(() => import("@/components/home/Banner"), {
-  ssr: false,
-});
-const About = dynamic(() => import("@/components/home/About"), { ssr: false });
-const FoodMenu = dynamic(() => import("@/components/home/FoodMenu"), {
-  ssr: false,
-});
-const Testimonials = dynamic(() => import("@/components/home/Testimonials"), {
-  ssr: false,
-});
-const Contact = dynamic(() => import("@/components/home/Contact"), {
-  ssr: false,
-});
-const Gallery = dynamic(() => import("@/components/home/Gallery"), {
-  ssr: false,
-});
 
 export default function Home() {
   return (

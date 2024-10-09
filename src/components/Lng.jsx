@@ -50,7 +50,7 @@ export default function Lng() {
           setIsShow(!isShow);
         }}
       >
-        {lng === "en" ? items[1].emoji : items[0].emoji}
+        {lng === "th" ? items[0].emoji : items[1].emoji}
         <div className="icon">
           {!isShow ? <TfiAngleDown /> : <TfiAngleUp />}
         </div>

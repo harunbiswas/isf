@@ -5,7 +5,7 @@ import en from './public/locales/en/common.json';
 import th from './public/locales/th/common.json';
 
 
-const defaultLng = 'en';
+const defaultLng = 'th';
 
 // Get the language from localStorage or fallback to default
 const lng =  defaultLng;

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiHome } from "react-icons/fi";
+import { GrCatalog } from "react-icons/gr";
 import { IoIosLogOut } from "react-icons/io";
 import { IoAdd } from "react-icons/io5";
 import { MdOutlineLocalOffer } from "react-icons/md";
@@ -27,6 +28,16 @@ export default function Sidebar() {
       icon: <MdOutlineLocalOffer />,
     },
     {
+      name: "Add Catagori",
+      url: "/admin/catagori/add",
+      icon: <IoAdd />,
+    },
+    {
+      name: "Catagoris",
+      url: "/admin/catagori",
+      icon: <GrCatalog />,
+    },
+    {
       name: "Add Product",
       url: "/admin/product/add",
       icon: <IoAdd />,
@@ -38,7 +49,6 @@ export default function Sidebar() {
     },
   ];
 
-  console.log(pathname);
   return (
     <div className="sidebar">
       <div className="brand">
@@ -58,7 +68,13 @@ export default function Sidebar() {
       </ul>
 
       <div className="logout-wrp">
-        <button className="logout btn">
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+            location.reload();
+          }}
+          className="logout btn"
+        >
           <IoIosLogOut />
           Logout
         </button>

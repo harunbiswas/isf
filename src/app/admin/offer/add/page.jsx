@@ -78,7 +78,7 @@ export default function AddOffer() {
             onChange={(e) => setImage(e.target.files[0])} // Capture file input
           />
         </div>
-
+        <strong>Language</strong>
         <div className="form-radio">
           <input
             value="en"

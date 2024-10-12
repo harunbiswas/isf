@@ -8,6 +8,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { IoAdd } from "react-icons/io5";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { RiProductHuntLine } from "react-icons/ri";
+import { TfiGallery } from "react-icons/tfi";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -46,6 +47,16 @@ export default function Sidebar() {
       name: "Products",
       url: "/admin/product",
       icon: <RiProductHuntLine />,
+    },
+    {
+      name: "add Gallery",
+      url: "/admin/gallery/add",
+      icon: <IoAdd />,
+    },
+    {
+      name: "Gallery",
+      url: "/admin/gallery",
+      icon: <TfiGallery />,
     },
   ];
 

@@ -43,7 +43,9 @@
     text-transform: capitalize;
   }
 
-  input {
+  input,
+  select,
+  textarea {
     height: 40px;
     border: $border;
     background-color: transparent;
@@ -166,13 +168,23 @@
       gap: 10px;
       margin-top: 20px;
 
-      input {
+      input,
+      select,
+      textarea {
         color: $black;
+        width: 600px;
+      }
+      textarea {
+        height: 200px;
       }
 
       &-radio {
         display: flex;
         gap: 10px;
+
+        input {
+          width: auto;
+        }
       }
     }
   }

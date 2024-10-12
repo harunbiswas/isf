@@ -1,5 +1,6 @@
-import Product from '@/components/home/Product';
+
 import dbConnect from '@/lib/dbConnect'; // Your MongoDB connection function
+import Product from '@/models/Product';
 import { writeFile } from 'fs/promises';
 import { NextResponse } from 'next/server';
 import { join } from 'path';
@@ -35,7 +36,7 @@ export async function POST(request) {
     return NextResponse.json({ message: 'File uploaded successfully',newProduct });
 
   } catch (error) {
-
+    console.log(error)
     return NextResponse.json({ error: 'File upload failed', details: error.message }, { status: 500 });
   }
 }

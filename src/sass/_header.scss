@@ -14,6 +14,10 @@
     width: 100vw !important;
   }
 
+  @media screen and (max-width: $sm) {
+    height: 70px;
+  }
+
   &.show {
     background-color: rgba($color: $black, $alpha: 0.5); // Add background color
     transform: translateY(0); // Reset transform to keep it at the top
@@ -64,7 +68,7 @@
       height: auto;
 
       @media screen and (max-width: $sm) {
-        width: 250px;
+        width: 180px;
       }
     }
   }
@@ -88,6 +92,10 @@
         gap: 20px;
         z-index: 999;
         transition: 0.5s;
+
+        @media screen and (max-width: $sm) {
+          top: 70px;
+        }
 
         &.show {
           left: 0;

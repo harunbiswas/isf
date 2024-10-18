@@ -662,7 +662,8 @@
     border-radius: 8px;
     max-width: 1000px;
 
-    .slide {
+    @media screen and (max-width: $sm) {
+      max-width: 100%;
     }
   }
 

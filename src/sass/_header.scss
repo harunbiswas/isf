@@ -194,7 +194,8 @@
     gap: 30px;
 
     @media screen and (max-width: $sm) {
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: auto auto;
     }
   }
 
@@ -241,6 +242,13 @@
       display: block;
       padding: 10px 0 5px;
       font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    &-contact,
+    &-menu {
+      order: 1;
     }
   }
 

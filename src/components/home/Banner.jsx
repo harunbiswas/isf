@@ -1,7 +1,9 @@
 "use client";
 
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,7 +21,30 @@ export default function Banner() {
     pauseOnHover: true,
   };
 
-  const { t } = useTranslation();
+  const [offers, setOffers] = useState([]);
+  const { i18n, t } = useTranslation();
+  const [lng, setLng] = useState(i18n.language); // Set initial language
+
+  useEffect(() => {
+    // Update lng whenever the language changes
+    setLng(i18n.language);
+  }, [i18n.language]);
+
+  useEffect(() => {
+    axios
+      .get("/api/offer")
+      .then((response) => {
+        setOffers(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, []);
+
+  console.log(offers); // For debugging
+
+  // Filter offers based on the selected language
+  const filteredOffers = offers.filter((offer) => offer.lng === lng);
 
   return (
     <div id="home" className="banner">
@@ -53,16 +78,18 @@ export default function Banner() {
               </div>
             </div>
           </div>
-          <div className="banner-slide">
-            <div className="banner-slide-wrp">
-              <Image
-                src={"/images/banner-offer.jpg"}
-                width={500}
-                height={500}
-                alt="Indian street food"
-              />
+          {filteredOffers.map((offer, i) => (
+            <div key={i} className="banner-slide">
+              <div className="banner-slide-wrp">
+                <Image
+                  src={offer?.image}
+                  width={500}
+                  height={500}
+                  alt="Indian street food"
+                />
+              </div>
             </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </div>

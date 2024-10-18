@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-qrc">
-          <h4>{t("textContacts")}</h4>
+          <h4>{t("textExperience")}</h4>
           <a
             href="http://vqr.vc/iPeHhJ8bM"
             target="_blank"

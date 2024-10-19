@@ -135,6 +135,9 @@
 
     .btn {
       margin: 20px auto;
+      @media screen and (max-width: $sm) {
+        margin: 5px auto;
+      }
     }
 
     &-wrp {

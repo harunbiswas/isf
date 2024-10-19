@@ -13,6 +13,7 @@
 
   @media screen and (max-width: $sm) {
     height: auto;
+    padding-top: 100px;
   }
 
   &::after {
@@ -104,18 +105,32 @@
       color: $primary;
       font-size: 18px;
       text-transform: uppercase;
+
+      @media screen and (max-width: $sm) {
+        font-size: 16px;
+      }
     }
 
     h1 {
       font-size: 64px;
       color: $white;
       padding: 10px 0;
+
+      @media screen and (max-width: $sm) {
+        font-size: 34px;
+        padding: 0;
+      }
     }
     p {
       color: $white;
       font-size: 16px;
       line-height: 28px;
       letter-spacing: 2px;
+
+      @media screen and (max-width: $sm) {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
 
     .btn {

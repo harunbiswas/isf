@@ -2,7 +2,6 @@
 
 import axios from "axios";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
@@ -50,7 +49,7 @@ export default function Banner() {
     <div id="home" className="banner">
       <div className="container">
         <Slider {...settings}>
-          <div className="banner-slide">
+          {/* <div className="banner-slide">
             <div className="banner-slide-wrp">
               <div className="banner-left">
                 <strong>{t("timeing")}</strong>
@@ -77,7 +76,7 @@ export default function Banner() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {filteredOffers.map((offer, i) => (
             <div key={i} className="banner-slide">
               <div className="banner-slide-wrp">

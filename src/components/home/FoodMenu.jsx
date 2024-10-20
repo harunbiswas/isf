@@ -79,10 +79,7 @@ export default function FoodMenu() {
               <strong>{item?.subTitle}</strong>
               <p>{item?.text}</p>
               <div className="bottom">
-                <strong className="price">${item?.price}</strong>
-                <Link href="#contact" className="btn">
-                  GO to shop
-                </Link>
+                <strong className="price">THB {item?.price}</strong>
               </div>
             </div>
           </div>

@@ -36,6 +36,7 @@ export default function About() {
         <div className="about-right">
           <h2>{t("aboutTitle")}</h2>
           <p>{t("aboutDis")}</p>
+          <p>{t("aboutDis1")}</p>
 
           <strong>{t("aboutMisson")}</strong>
           <Link href="#contact" className="btn">

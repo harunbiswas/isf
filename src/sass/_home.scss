@@ -676,11 +676,17 @@
     h4 {
       font-size: 18px;
       padding: 5px 10px;
+      color: $secndary;
     }
 
     p {
       padding: 0 15px;
       font-size: 14px;
+    }
+    strong {
+      padding: 0 15px;
+      font-size: 18px;
+      color: $secndary;
     }
   }
 }

@@ -38,17 +38,25 @@ export default function FoodMenu() {
   return (
     <div id="menu" className="food-menu">
       <div className="container">
-        <h2 className="title">{t("textProducts")}</h2>
+        <h2
+          data-wow-duration="1.5s"
+          data-wow-delay=".6s"
+          className="title wow animate__fadeInDown"
+        >
+          {t("textProducts")}
+        </h2>
         <div className="food-menu-cat">
           {menus?.map((product, i) => (
             <Link
+              data-wow-duration="1.5s"
+              data-wow-delay=".6s"
               href="/"
               onClick={(e) => {
                 e.preventDefault();
                 setItem(product);
               }}
               key={i}
-              className={`food-menu-cat-item ${
+              className={`wow animate__fadeInUp food-menu-cat-item ${
                 (item?.id === product?.id && "active") || ""
               }`}
             >
@@ -66,7 +74,11 @@ export default function FoodMenu() {
         </div>
         <div className="food-menu-wrp">
           <div className="food-menu-item">
-            <div className={`food-menu-item-left order`}>
+            <div
+              data-wow-duration="1.5s"
+              data-wow-delay=".6s"
+              className={`food-menu-item-left order wow animate__fadeInRight`}
+            >
               <Image
                 src={item?.img}
                 width={500}
@@ -74,7 +86,11 @@ export default function FoodMenu() {
                 alt="Indian street food"
               />
             </div>
-            <div className="food-menu-item-right">
+            <div
+              data-wow-duration="1.5s"
+              data-wow-delay=".6s"
+              className="food-menu-item-right wow animate__fadeInLeft"
+            >
               <h2>{item?.title}</h2>
               <strong>{item?.subTitle}</strong>
               <p>{item?.text}</p>

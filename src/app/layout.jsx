@@ -1,6 +1,10 @@
 "use client";
+import "animate.css";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import WOW from "wowjs";
+import "wowjs/css/libs/animate.css";
 import "../../i18n";
 import "../sass/style.scss";
 
@@ -13,12 +17,16 @@ const Social = dynamic(() => import("@/components/home/Social"), {
 
 function RootLayout({ children }) {
   const pathname = usePathname();
-
+  useEffect(() => {
+    const wow = new WOW.WOW();
+    wow.init(); // Initialize WOW.js
+  }, []);
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/login");
 
   return (
     <html lang="en">
+      <head></head>
       <body>
         <main>
           {!isAdminRoute && <Header />}

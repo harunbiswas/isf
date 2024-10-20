@@ -10,7 +10,11 @@ export default function Contact() {
       <div className="container">
         <h2 className="title">{t("textOffers")}</h2>
         <div className="food-menu-offers">
-          <div className="food-menu-offer">
+          <div
+            data-wow-duration="1.5s"
+            data-wow-delay=".6s"
+            className="food-menu-offer wow animate__fadeInLeft"
+          >
             <div className="img">
               <Image
                 src="/images/offer-1.jpg"
@@ -27,7 +31,11 @@ export default function Contact() {
               </p>
             </div> */}
           </div>
-          <div className="food-menu-offer">
+          <div
+            data-wow-duration="1.5s"
+            data-wow-delay=".6s"
+            className="food-menu-offer wow animate__fadeInRight"
+          >
             <div className="img">
               <Image
                 src="/images/offer-2.jpg"

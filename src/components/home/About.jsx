@@ -5,19 +5,19 @@ import { useTranslation } from "react-i18next";
 
 export default function About() {
   const { t } = useTranslation();
+
   return (
     <div id="about" className="about">
       <div className="container">
-        <div className="about-left">
+        <div
+          data-wow-duration="1.5s"
+          data-wow-delay=".6s"
+          className="about-left wow animate__fadeInLeft"
+        >
           <div className="img">
-            <Image
-              src="/images/food/Samosa.jpg"
-              width={200}
-              height={320}
-              alt=""
-            />
+            <Image src="/images/about-1.png" width={200} height={320} alt="" />
           </div>
-          <div className="img">
+          {/* <div className="img">
             <Image
               src="/images/food/pani-puri.jpg"
               width={320}
@@ -30,12 +30,16 @@ export default function About() {
               height={300}
               alt=""
             />
-          </div>
+          </div> */}
         </div>
-        <div className="about-right">
+        <div
+          className="about-right wow animate__fadeInRight"
+          data-wow-duration="1.5s"
+          data-wow-delay=".6s"
+        >
           <h2>{t("aboutTitle")}</h2>
           <p>{t("aboutDis")}</p>
-          <ul>
+          {/* <ul>
             <li>
               <p>{t("aboutList1")}</p>
             </li>
@@ -54,8 +58,8 @@ export default function About() {
             <li>
               <p>{t("aboutList4")}</p>
             </li>
-          </ul>
-          <p>{t("aboutDis0")}</p>
+          </ul> */}
+          {/* <p>{t("aboutDis0")}</p> */}
           <p>{t("aboutDis1")}</p>
 
           <strong>{t("aboutMisson")}</strong>

@@ -33,7 +33,11 @@ export default function Testimonials() {
   return (
     <div id="shop" className="testimonials">
       <div className="container">
-        <div className="testimonials-slider">
+        <div
+          data-wow-duration="1.5s"
+          data-wow-delay=".6s"
+          className=" testimonials-slider wow animate__fadeInLeft"
+        >
           {" "}
           <h2 className="title">{t("textCustomer")}</h2>
           <Slider {...settings}>
@@ -49,7 +53,11 @@ export default function Testimonials() {
           </Slider>
         </div>
         <div className="separator"></div>
-        <div className="location-map">
+        <div
+          data-wow-duration="1.5s"
+          data-wow-delay=".6s"
+          className="location-map wow animate__fadeInRight"
+        >
           <h2 className="title">{t("textPresence")}</h2>
           <Map />
         </div>

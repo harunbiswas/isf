@@ -52,13 +52,14 @@ export default function Product({ products }) {
           {products?.map((product, i) => (
             <div key={i} className="product-item">
               <Image
-                src={product?.img}
-                alt={product?.name}
+                src={product?.image}
+                alt={product?.title}
                 width={200}
                 height={200}
               />
-              <h4>{product.name}</h4>
-              <p>{product?.text}</p>
+              <h4>{product.title}</h4>
+              <p>{product?.discription}</p>{" "}
+              <strong className="price">฿{product?.price}</strong>
             </div>
           ))}
         </Slider>

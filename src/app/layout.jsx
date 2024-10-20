@@ -25,7 +25,6 @@ async function RootLayout({ children }) {
     wow.init();
   };
   useEffect(() => {
-    // Initialize WOW.js
     initWow();
   }, []);
 
@@ -34,9 +33,6 @@ async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <head>
-        <title>Your App Title</title>
-      </head>
       <body>
         <main>
           {!isAdminRoute && <Header />}

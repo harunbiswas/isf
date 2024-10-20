@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 export default function Product({ products }) {
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 1000,
     slidesToShow: 4, // Default number of slides to show
     slidesToScroll: 1,

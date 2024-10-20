@@ -16,14 +16,17 @@ const Social = dynamic(() => import("@/components/home/Social"), {
   ssr: false,
 });
 
-function RootLayout({ children }) {
+async function RootLayout({ children }) {
   const pathname = usePathname();
 
+  const initWow = async () => {
+    const WOW = (await import("wowjs")).WOW;
+    const wow = new WOW();
+    wow.init();
+  };
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const wow = new WOW.WOW();
-      wow.init(); // Initialize WOW.js
-    }
+    // Initialize WOW.js
+    initWow();
   }, []);
 
   const isAdminRoute =

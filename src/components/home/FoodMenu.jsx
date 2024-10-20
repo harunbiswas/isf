@@ -115,7 +115,9 @@ export default function FoodMenu() {
               </div>
             </div>
 
-            {filterProducts.length > 1 && <Product products={filterProducts} />}
+            {filterProducts.length > 1 && (
+              <Product products={filterProducts.slice(1)} />
+            )}
           </div>
         )}
       </div>

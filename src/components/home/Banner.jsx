@@ -40,8 +40,6 @@ export default function Banner() {
       });
   }, []);
 
-  console.log(offers); // For debugging
-
   // Filter offers based on the selected language
   const filteredOffers = offers.filter((offer) => offer.lng === lng);
 

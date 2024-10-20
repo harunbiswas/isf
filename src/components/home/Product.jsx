@@ -4,40 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-export default function Product() {
-  const products = [
-    {
-      img: "/images/food/biriani.jpg",
-      name: "Biriani",
-      text: "A classic Indian street food, this samosa is filled with a spiced potato mixture. The potatoes are cooked until tender and then combined with aromatic spices, creating a comforting and flavorful snack",
-    },
-    {
-      img: "/images/food/biriani.jpg",
-      name: "Biriani",
-      text: "A classic Indian street food, this samosa is filled with a spiced potato mixture. The potatoes are cooked until tender and then combined with aromatic spices, creating a comforting and flavorful snack",
-    },
-    {
-      img: "/images/food/biriani.jpg",
-      name: "Biriani",
-      text: "A classic Indian street food, this samosa is filled with a spiced potato mixture. The potatoes are cooked until tender and then combined with aromatic spices, creating a comforting and flavorful snack",
-    },
-    {
-      img: "/images/food/biriani.jpg",
-      name: "Biriani",
-      text: "A classic Indian street food, this samosa is filled with a spiced potato mixture. The potatoes are cooked until tender and then combined with aromatic spices, creating a comforting and flavorful snack",
-    },
-    {
-      img: "/images/food/biriani.jpg",
-      name: "Biriani",
-      text: "A classic Indian street food, this samosa is filled with a spiced potato mixture. The potatoes are cooked until tender and then combined with aromatic spices, creating a comforting and flavorful snack",
-    },
-    {
-      img: "/images/food/biriani.jpg",
-      name: "Biriani",
-      text: "A classic Indian street food, ",
-    },
-  ];
-
+export default function Product({ products }) {
   const settings = {
     dots: false,
     infinite: true,

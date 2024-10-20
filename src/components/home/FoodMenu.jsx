@@ -1,40 +1,54 @@
 "use client";
 
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Product from "./Product";
 
 export default function FoodMenu() {
-  const { t } = useTranslation();
-  const menus = [
-    {
-      id: 1,
-      img: "/images/Food images for foodtruck/Samosa1.png",
-      title: "Samosa",
-      subTitle: "Chicken Samosa",
-      text: "A crispy, golden-brown pastry filled with a savory mixture of minced chicken, spices, and herbs. The chicken is cooked to perfection and seasoned with aromatic Indian flavors, creating a delicious and satisfying snack or appetizer.",
-      price: 15,
-    },
-    {
-      id: 2,
-      img: "/images/Food images for foodtruck/Biryani2.png",
-      title: "Chicken",
-      subTitle: "Chicken Lover Set",
-      text: "Savor our Chicken Lover set, a hearty and flavorful meal for two. Enjoy a generous portion of aromatic Indian Chicken Biryani, paired with two crispy Chicken Samosas. Quench your thirst with your choice of refreshing Masala Chai or tangy Mango. All this for just 239 THB!",
-      price: 15,
-    },
-    {
-      id: 3,
-      img: "/images/Food images for foodtruck/Panipuri2.png",
-      title: "Pani Puri",
-      subTitle: "A Flavor Explosion",
-      text: "Indulge in the tantalizing experience of Pani Puri, a beloved Indian street food. These crispy, hollow spheres are filled with a tangy and sweet tamarind water, and topped with a medley of flavorful ingredients.",
-      price: 15,
-    },
-  ];
-  const [item, setItem] = useState(menus[0]);
+  const { t, i18n } = useTranslation();
+  const [menus, setMenus] = useState([]);
+  const [item, setItem] = useState({});
+  const [cats, setCats] = useState([]);
+  const [lng, setLng] = useState(i18n.language);
+
+  useEffect(() => {
+    // Update lng whenever the language changes
+    setLng(i18n.language);
+  }, [i18n.language]);
+
+  useEffect(() => {
+    axios
+      .get(`/api/catagori`)
+      .then((d) => {
+        setCats(d.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`/api/product`)
+      .then((d) => {
+        setMenus(d.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
+  useEffect(() => {
+    setItem(cats[0]?.title);
+  }, [cats]);
+
+  // Filter catagori based on the selected language
+  const filteredCats = cats.filter((cat) => cat.lng === lng);
+  const filterProducts = menus.filter((product) => product?.catagori === item);
+
   return (
     <div id="menu" className="food-menu">
       <div className="container">
@@ -46,62 +60,64 @@ export default function FoodMenu() {
           {t("textProducts")}
         </h2>
         <div className="food-menu-cat">
-          {menus?.map((product, i) => (
+          {filteredCats?.map((cat, i) => (
             <Link
               data-wow-duration="1.5s"
               data-wow-delay=".6s"
               href="/"
               onClick={(e) => {
                 e.preventDefault();
-                setItem(product);
+                setItem(cat.title);
               }}
               key={i}
               className={`wow animate__fadeInUp food-menu-cat-item ${
-                (item?.id === product?.id && "active") || ""
+                (item === cat?.title && "active") || ""
               }`}
             >
-              <h4>{product?.title}</h4>
+              <h4>{cat?.title}</h4>
               <div className="food-menu-cat-item-img">
                 <Image
-                  src={product?.img}
-                  width={300}
-                  height={300}
+                  src={cat?.image}
+                  width={200}
+                  height={200}
                   alt="Indian street food"
                 />
               </div>
             </Link>
           ))}
         </div>
-        <div className="food-menu-wrp">
-          <div className="food-menu-item">
-            <div
-              data-wow-duration="1.5s"
-              data-wow-delay=".6s"
-              className={`food-menu-item-left order wow animate__fadeInRight`}
-            >
-              <Image
-                src={item?.img}
-                width={500}
-                height={500}
-                alt="Indian street food"
-              />
-            </div>
-            <div
-              data-wow-duration="1.5s"
-              data-wow-delay=".6s"
-              className="food-menu-item-right wow animate__fadeInLeft"
-            >
-              <h2>{item?.title}</h2>
-              <strong>{item?.subTitle}</strong>
-              <p>{item?.text}</p>
-              <div className="bottom">
-                <strong className="price">฿{item?.price}</strong>
+        {filterProducts.length > 0 && (
+          <div className="food-menu-wrp">
+            <div className="food-menu-item">
+              <div
+                data-wow-duration="1.5s"
+                data-wow-delay=".6s"
+                className={`food-menu-item-left order wow animate__fadeInRight`}
+              >
+                <Image
+                  src={filterProducts[0]?.image}
+                  width={500}
+                  height={500}
+                  alt="Indian street food"
+                />
+              </div>
+              <div
+                data-wow-duration="1.5s"
+                data-wow-delay=".6s"
+                className="food-menu-item-right wow animate__fadeInLeft"
+              >
+                <h2>{filterProducts[0]?.title}</h2>
+
+                <p>{filterProducts[0]?.discription}</p>
+                <div className="bottom">
+                  <strong className="price">฿{filterProducts[0]?.price}</strong>
+                </div>
               </div>
             </div>
-          </div>
 
-          <Product />
-        </div>
+            {filterProducts.length > 1 && <Product products={filterProducts} />}
+          </div>
+        )}
       </div>
     </div>
   );

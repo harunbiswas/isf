@@ -37,13 +37,13 @@ export default function AddProduct() {
     formData.append("file", image); // Append the file (image)
     formData.append("lng", lng); // Append the language
     formData.append("catagori", category); // Append the category
-    formData.append("discription", description); // Append the description
-    formData.append("price", price); // Append the price
+    formData.append("discription", description);
+    formData.append("price", price);
 
     try {
       const response = await axios.post("/api/product", formData, {
         headers: {
-          "Content-Type": "multipart/form-data", // Set the correct content type
+          "Content-Type": "multipart/form-data",
         },
       });
 

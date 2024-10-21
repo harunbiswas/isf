@@ -54,6 +54,7 @@ export async function GET(request) {
 }
 
 
+
 export async function DELETE(request) {
   try {
     await dbConnect();
@@ -95,11 +96,14 @@ export async function DELETE(request) {
 
 
 
-export async function PUT(request) {
+
+
+
+  export async function PUT(request) {
     try {
       await dbConnect();
   
-      // Extract the Product ID from the query string (assuming the ID is passed as a query parameter)
+      // Extract the Product ID from the query string
       const { searchParams } = new URL(request.url);
       const productId = searchParams.get('id');
   
@@ -107,7 +111,7 @@ export async function PUT(request) {
         return NextResponse.json({ error: 'No product ID provided' }, { status: 400 });
       }
   
-      // Find the product in the database by ID
+      // Find the product in the database
       const product = await Product.findById(productId);
   
       if (!product) {
@@ -119,22 +123,22 @@ export async function PUT(request) {
       const file = formData.get('file');
       const title = formData.get('title') || product.title;
       const lng = formData.get('lng') || product.lng;
-      const description = formData.get('description') || product.description;
+      const discription = formData.get('discription') || product.description;
       const category = formData.get('category') || product.category;
       const price = formData.get('price') || product.price;
   
-      let relativeFilePath = product.image; // Default to existing image path
+      let relativeFilePath = product.image; // Use existing image path if no new file
   
-      // If a new file is uploaded, handle file replacement
+      // Handle new file upload if provided
       if (file) {
         const buffer = Buffer.from(await file.arrayBuffer());
         relativeFilePath = `/uploads/image/${file.name}`;
         const filePath = join(process.cwd(), '/public/uploads/image/', file.name);
   
-        // Write the new file to the 'uploads' directory
+        // Write the new file
         await writeFile(filePath, buffer);
   
-        // Remove the old image file if it exists
+        // Remove the old image
         const oldFilePath = join(process.cwd(), '/public', product.image);
         try {
           await unlink(oldFilePath);
@@ -143,14 +147,15 @@ export async function PUT(request) {
         }
       }
   
-      // Update the product with the new values
+      // Update the product with new or existing values
       product.title = title;
       product.lng = lng;
-      product.description = description;
+      product.discription = discription;
       product.category = category;
       product.price = price;
       product.image = relativeFilePath;
   
+      // Save the updated product
       await product.save();
   
       return NextResponse.json({ message: 'Product updated successfully', product }, { status: 200 });

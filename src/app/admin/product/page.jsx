@@ -2,7 +2,9 @@
 
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 export default function Offer() {
@@ -53,6 +55,12 @@ export default function Offer() {
             >
               <MdDelete />
             </button>
+            <Link
+              className="edit btn"
+              href={`/admin/product/edit?id=${item?._id}`}
+            >
+              <FaRegEdit />
+            </Link>
             <div className="img">
               <Image
                 src={item?.image}

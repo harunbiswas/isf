@@ -1,6 +1,6 @@
 "use client";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import React from "react";
+import React, { useState } from "react";
 
 const containerStyle = {
   width: "100%",
@@ -9,27 +9,48 @@ const containerStyle = {
   overflow: "hidden",
 };
 
-const center = {
-  lat: 13.68399, // Default latitude
-  lng: 100.64073,
-};
-
 const mapOptions = {
-  zoomControl: true, // Enable zoom controls
-  fullscreenControl: true, // Optional: Enable fullscreen control
-  streetViewControl: false, // Optional: Disable street view control
-  mapTypeControl: true, // Optional: Disable map type control
+  zoomControl: true,
+  fullscreenControl: true,
+  streetViewControl: false,
+  mapTypeControl: true,
 };
 
 const Map = () => {
+  const [center, setCenter] = useState({
+    lat: 13.68399,
+    lng: 100.64073,
+  });
+  const [zoom, setZoom] = useState(13);
   const [isApiLoaded, setIsApiLoaded] = React.useState(false);
 
   const customMarker = isApiLoaded
     ? {
-        url: "/images/logo-1-2.png", // Replace with your custom marker URL
-        scaledSize: new window.google.maps.Size(20, 20), // Adjust the marker size
+        url: "/images/logo-1-2.png",
+        scaledSize: new window.google.maps.Size(20, 20),
       }
     : null;
+
+  const smoothZoom = (currentZoom, targetZoom) => {
+    const step = currentZoom < targetZoom ? 0.1 : -0.1; // Adjust based on zoom direction
+    const interval = setInterval(() => {
+      setZoom((prevZoom) => {
+        if (
+          (step > 0 && prevZoom >= targetZoom) ||
+          (step < 0 && prevZoom <= targetZoom)
+        ) {
+          clearInterval(interval);
+          return targetZoom;
+        }
+        return prevZoom + step;
+      });
+    }, 50);
+  };
+
+  const handleMarkerClick = (newCenter, targetZoom) => {
+    setCenter(newCenter);
+    smoothZoom(zoom, targetZoom); // Pass the current zoom and target zoom
+  };
 
   return (
     <LoadScript
@@ -40,42 +61,43 @@ const Map = () => {
         mapContainerClassName="map-container"
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={13}
-        options={mapOptions} // Add map options for zoom and control
+        zoom={zoom}
+        options={mapOptions}
+        onZoomChanged={() => setZoom(zoom)} // Update zoom state on manual zoom change
       >
         {isApiLoaded && (
           <Marker
-            position={{
-              lat: 13.66288, // Default latitude
-              lng: 100.60172, // Default longitude
-            }}
+            onClick={() =>
+              handleMarkerClick({ lat: 13.66288, lng: 100.60172 }, 18)
+            }
+            position={{ lat: 13.66288, lng: 100.60172 }}
             icon={customMarker}
           />
-        )}{" "}
+        )}
         {isApiLoaded && (
           <Marker
-            position={{
-              lat: 13.67575, // Default latitude
-              lng: 100.64073, // Default longitude
-            }}
+            onClick={() =>
+              handleMarkerClick({ lat: 13.67575, lng: 100.64073 }, 18)
+            }
+            position={{ lat: 13.67575, lng: 100.64073 }}
             icon={customMarker}
           />
-        )}{" "}
+        )}
         {isApiLoaded && (
           <Marker
-            position={{
-              lat: 13.70565, // Default latitude
-              lng: 100.6005, // Default longitude
-            }}
+            onClick={() =>
+              handleMarkerClick({ lat: 13.70565, lng: 100.6005 }, 18)
+            }
+            position={{ lat: 13.70565, lng: 100.6005 }}
             icon={customMarker}
           />
-        )}{" "}
+        )}
         {isApiLoaded && (
           <Marker
-            position={{
-              lat: 13.6571, // Default latitude
-              lng: 100.67826, // Default longitude
-            }}
+            onClick={() =>
+              handleMarkerClick({ lat: 13.6571, lng: 100.67826 }, 18)
+            }
+            position={{ lat: 13.6571, lng: 100.67826 }}
             icon={customMarker}
           />
         )}

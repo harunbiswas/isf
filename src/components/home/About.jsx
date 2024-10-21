@@ -37,6 +37,8 @@ export default function About() {
           data-wow-duration="1.5s"
           data-wow-delay=".6s"
         >
+          <h2>{t("aboutMissonTitle")}</h2>
+          <strong>{t("aboutMisson")}</strong>
           <h2>{t("aboutTitle")}</h2>
           <p>{t("aboutDis")}</p>
           {/* <ul>
@@ -62,7 +64,6 @@ export default function About() {
           {/* <p>{t("aboutDis0")}</p> */}
           <p>{t("aboutDis1")}</p>
 
-          <strong>{t("aboutMisson")}</strong>
           {/* <Link href="#contact" className="btn">
             {t("aboutBtnText")}
           </Link> */}

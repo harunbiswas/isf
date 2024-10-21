@@ -2,9 +2,8 @@ import {
   FaFacebook,
   FaInstagramSquare,
   FaWhatsappSquare,
-  FaYoutube,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaLine } from "react-icons/fa6";
 
 export default function Social() {
   const items = [
@@ -17,13 +16,10 @@ export default function Social() {
       url: "/",
     },
     {
-      icon: <FaXTwitter />,
+      icon: <FaLine />,
       url: "/",
     },
-    {
-      icon: <FaYoutube />,
-      url: "/",
-    },
+
     {
       icon: <FaWhatsappSquare />,
       url: "/",

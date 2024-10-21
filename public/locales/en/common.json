@@ -11,7 +11,9 @@
   "aboutList3": "Gujarat offers delights such as Dhokla and Khakra.",
   "aboutList4": "South India is famed for its dishes like Idli, Vada, and many more.",
   "aboutDis1": "3C ‘s endeavor is to bring the Indian street food on the streets of Bangkok for the taste buds of locals with authentic Indian tastes.",
+
   "aboutMisson": "The Oxford Dictionary defines Street food as “Food that is purchased from a street vendor and typically eaten immediately, often while standing in the street”",
+  "aboutMissonTitle": "Street Food",
   "aboutBtnText": "Go to shop",
   "textProducts": "Our Products",
   "textPresence": "Our Presence",
@@ -29,7 +31,11 @@
     },
     {
       "url": "#menu",
-      "name": "Product"
+      "name": "Menu"
+    },
+    {
+      "url": "#shop",
+      "name": "Location"
     },
 
     {

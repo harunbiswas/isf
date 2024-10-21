@@ -59,7 +59,7 @@ export default function Product({ products }) {
               />
               <h4>{product.title}</h4>
               <p>{product?.discription}</p>{" "}
-              <strong className="price">Pirce: ฿{product?.price}</strong>
+              <strong className="price">Price: ฿{product?.price}</strong>
             </div>
           ))}
         </Slider>

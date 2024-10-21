@@ -41,13 +41,12 @@ export default function FoodMenu() {
       });
   }, []);
 
-  useEffect(() => {
-    setItem(cats[0]?.title);
-  }, [cats]);
-
   // Filter catagori based on the selected language
   const filteredCats = cats.filter((cat) => cat.lng === lng);
   const filterProducts = menus.filter((product) => product?.catagori === item);
+  useEffect(() => {
+    setItem(filteredCats[0]?.title);
+  }, [cats, lng]);
 
   return (
     <div id="menu" className="food-menu">

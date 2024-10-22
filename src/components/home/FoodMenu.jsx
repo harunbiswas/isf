@@ -116,7 +116,7 @@ export default function FoodMenu() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Order on Grob
+                    Order on grab
                   </a>
                 </div>
               </div>

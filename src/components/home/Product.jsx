@@ -66,7 +66,7 @@ export default function Product({ products }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Order on Grob
+                Order on grab
               </a>
             </div>
           ))}

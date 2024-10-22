@@ -438,7 +438,8 @@
 
       .bottom {
         display: flex;
-        gap: 40px;
+        gap: 10px;
+        flex-direction: column;
 
         .price {
           font-size: 34px;

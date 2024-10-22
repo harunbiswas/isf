@@ -110,6 +110,14 @@ export default function FoodMenu() {
                 <p>{filterProducts[0]?.discription}</p>
                 <div className="bottom">
                   <strong className="price">฿{filterProducts[0]?.price}</strong>
+                  <a
+                    className="btn"
+                    href="grob://order/12345"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Order on Grob
+                  </a>
                 </div>
               </div>
             </div>

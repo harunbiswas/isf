@@ -60,6 +60,14 @@ export default function Product({ products }) {
               <h4>{product.title}</h4>
               <p>{product?.discription}</p>{" "}
               <strong className="price"> ฿{product?.price}</strong>
+              <a
+                className="btn"
+                href="grob://order/12345"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Order on Grob
+              </a>
             </div>
           ))}
         </Slider>

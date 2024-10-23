@@ -1,5 +1,6 @@
 "use client";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const containerStyle = {
@@ -23,6 +24,7 @@ const Map = () => {
   });
   const [zoom, setZoom] = useState(13);
   const [isApiLoaded, setIsApiLoaded] = React.useState(false);
+  const router = useRouter(); // Initialize router
 
   const customMarker = isApiLoaded
     ? {
@@ -32,7 +34,7 @@ const Map = () => {
     : null;
 
   const smoothZoom = (currentZoom, targetZoom) => {
-    const step = currentZoom < targetZoom ? 0.1 : -0.1; // Adjust based on zoom direction
+    const step = currentZoom < targetZoom ? 0.1 : -0.1;
     const interval = setInterval(() => {
       setZoom((prevZoom) => {
         if (
@@ -48,8 +50,9 @@ const Map = () => {
   };
 
   const handleMarkerClick = (newCenter, targetZoom) => {
-    setCenter(newCenter);
-    smoothZoom(zoom, targetZoom); // Pass the current zoom and target zoom
+    // Open Google Maps with the latitude and longitude
+    const googleMapsUrl = `https://www.google.com/maps?q=${newCenter.lat},${newCenter.lng}`;
+    window.open(googleMapsUrl, "_blank"); // Open in a new tab
   };
 
   return (
@@ -63,7 +66,7 @@ const Map = () => {
         center={center}
         zoom={zoom}
         options={mapOptions}
-        onZoomChanged={() => setZoom(zoom)} // Update zoom state on manual zoom change
+        onZoomChanged={() => setZoom(zoom)}
       >
         {isApiLoaded && (
           <Marker

@@ -6,8 +6,10 @@
 
 html,
 body {
-  font-family: "Roboto", sans-serif;
-  font-family: "Actor", sans-serif;
+  // font-family: "Roboto", sans-serif;
+  // font-family: "Actor", sans-serif;
+  // font-family: "Playwrite GB S", cursive;
+  font-family: "Helvetica", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -17,6 +19,7 @@ body {
 
 a {
   text-decoration: none;
+
   color: $black;
 }
 

@@ -3,6 +3,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+
+// custom fonts
+@font-face {
+  font-family: "Helvetica";
+  src: url("../../public/fonts/Helvetica.woff") format("woff"),
+    url("../../public/fonts/Helvetica-Bold.woff") format("woff"),
+    url("../../public/fonts/Helvetica-BoldOblique.woff") format("woff"),
+    url("../../public/fonts/Helvetica-Oblique.woff") format("woff");
+}
+
 // color
 $primary: #c41e3a;
 $secndary: #00897b;

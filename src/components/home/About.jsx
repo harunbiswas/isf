@@ -15,7 +15,12 @@ export default function About() {
           className="about-left wow animate__fadeInLeft"
         >
           <div className="img">
-            <Image src="/images/about-1.png" width={200} height={320} alt="" />
+            <Image
+              src="/images/about-image.png"
+              width={200}
+              height={320}
+              alt=""
+            />
           </div>
           {/* <div className="img">
             <Image

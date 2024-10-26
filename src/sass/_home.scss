@@ -469,13 +469,17 @@
   }
 
   .container {
-    display: glex;
-    max-width: 550px;
+    display: grid;
     gap: 2%;
     align-items: flex-start;
+    grid-template-columns: 48% 5px 45%;
 
     @media screen and (max-width: $lg) {
       grid-template-columns: 100%;
+    }
+
+    .map-wrp {
+      width: 100%;
     }
   }
 
@@ -716,7 +720,7 @@
     overflow: hidden;
     width: 100%;
     position: relative;
-    height: 400px;
+    height: 450px;
 
     img {
       width: 100%;
@@ -738,6 +742,8 @@
       padding: 0 15px;
       font-size: 15px;
       color: $secndary;
+      position: absolute;
+      bottom: 60px;
     }
     .btn {
       font-size: 14px;

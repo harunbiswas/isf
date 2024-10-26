@@ -1,6 +1,5 @@
 import About from "@/components/home/About";
 import Banner from "@/components/home/Banner";
-import Contact from "@/components/home/Contact";
 import FoodMenu from "@/components/home/FoodMenu";
 import Gallery from "@/components/home/Gallery";
 import Offers from "@/components/home/Offers";
@@ -20,7 +19,7 @@ export default function Home() {
       <Testimonials />
       <Offers />
       <Gallery />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 }

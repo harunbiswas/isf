@@ -87,14 +87,12 @@ const Map = () => {
             onCloseClick={() => setSelectedMarker(null)}
           >
             <div className="map-details">
-              <h4>Details</h4>
               <a
                 href={selectedMarker.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <strong>{selectedMarker?.title}:</strong>
-                <span>{selectedMarker?.details}</span>
+                <strong>{selectedMarker?.title}</strong>
               </a>
             </div>
           </InfoWindow>

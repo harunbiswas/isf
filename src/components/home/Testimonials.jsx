@@ -30,7 +30,7 @@ export default function Testimonials() {
   }, [i18next.language]);
 
   return (
-    <div id="shop" className="testimonials">
+    <div className="testimonials">
       <div className="container">
         <div
           data-wow-duration="1.5s"

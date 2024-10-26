@@ -6,7 +6,7 @@ import Map from "./Map";
 export default function Contact() {
   const { t } = useTranslation();
   return (
-    <div id="offer" className="contact">
+    <div id="location" className="contact">
       <div className="container">
         <h2 className="title">{t("textPresence")}</h2>
         <div className="contact-wrp">

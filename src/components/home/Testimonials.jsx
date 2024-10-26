@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Map from "./Map";
 
 export default function Testimonials() {
   const { t } = useTranslation();
@@ -51,15 +50,6 @@ export default function Testimonials() {
               </div>
             ))}
           </Slider>
-        </div>
-        <div className="separator"></div>
-        <div
-          data-wow-duration="1.5s"
-          data-wow-delay=".6s"
-          className="location-map wow animate__fadeInRight"
-        >
-          <h2 className="title">{t("textPresence")}</h2>
-          <Map />
         </div>
       </div>
     </div>

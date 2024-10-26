@@ -460,7 +460,7 @@
 .testimonials {
   min-height: 500px;
   background-color: rgba($tarnary, 0.03);
-  padding: 100px 0;
+  padding: 40px 0;
   color: $black;
 
   @media screen and (max-width: $lg) {
@@ -469,8 +469,8 @@
   }
 
   .container {
-    display: grid;
-    grid-template-columns: 49% auto 49%;
+    display: glex;
+    max-width: 550px;
     gap: 2%;
     align-items: flex-start;
 
@@ -502,19 +502,6 @@
     @media screen and (max-width: $lg) {
       width: 100%;
       height: 3px;
-    }
-  }
-
-  .location-map {
-    width: 100%;
-    max-height: 300px;
-
-    @media screen and (max-width: $lg) {
-      max-height: unset;
-    }
-
-    div {
-      height: 100%;
     }
   }
 
@@ -597,7 +584,7 @@
 // contact
 
 .contact {
-  padding: 80px 0 0;
+  padding: 40px 0 0;
   min-height: 400px;
 
   @media screen and (max-width: $lg) {
@@ -605,6 +592,67 @@
 
     .title {
       padding-bottom: 30px;
+    }
+  }
+
+  .location-map {
+    width: 100%;
+    // max-height: 300px;
+
+    @media screen and (max-width: $lg) {
+      max-height: unset;
+    }
+
+    div {
+      height: 100%;
+    }
+  }
+
+  &-wrp {
+    display: flex;
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+    }
+  }
+
+  &-left,
+  &-right {
+    width: 100%;
+    .map-container {
+      border-radius: 0 !important;
+    }
+
+    .map-details {
+      strong {
+        color: $tarnary;
+      }
+    }
+  }
+
+  &-right {
+    background-color: $tarnary;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @media screen and (max-width: $sm) {
+      display: block;
+      padding: 20px;
+      box-sizing: content-box;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        text-align: center;
+      }
     }
   }
 }
@@ -703,7 +751,7 @@
 // gallery
 .gallery {
   background-color: rgba($tarnary, 0.03);
-  padding: 80px 0;
+  padding: 40px 0;
 
   @media screen and (max-width: $lg) {
     padding: 40px 0;
@@ -785,6 +833,6 @@
 }
 
 //maps
-.testimonials .location-map div {
+.contact .location-map div {
   height: min-content;
 }

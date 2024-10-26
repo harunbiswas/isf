@@ -36,6 +36,10 @@ export default function Footer() {
           <div className="content">
             <span>{t("textWork")}</span>
             <strong>{t("textTime")}</strong>
+            <br />
+            <strong>+66 644 287 510 </strong>
+            <br />
+            <strong>+66 644 286 608 </strong>
             <span>{t("textAddress")}</span>
             <strong>{t("textAdd")}</strong>
           </div>

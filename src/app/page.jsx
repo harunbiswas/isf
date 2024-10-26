@@ -3,6 +3,7 @@ import Banner from "@/components/home/Banner";
 import Contact from "@/components/home/Contact";
 import FoodMenu from "@/components/home/FoodMenu";
 import Gallery from "@/components/home/Gallery";
+import Offers from "@/components/home/Offers";
 import Testimonials from "@/components/home/Testimonials";
 
 export const metadata = {
@@ -17,8 +18,9 @@ export default function Home() {
       <About />
       <FoodMenu />
       <Testimonials />
-      <Contact />
+      <Offers />
       <Gallery />
+      <Contact />
     </div>
   );
 }

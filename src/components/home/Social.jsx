@@ -17,7 +17,7 @@ export default function Social() {
     },
     {
       icon: <FaLine style={{ color: "#00B900" }} />,
-      url: "https://line.me/ti/p/3cbites",
+      url: "https://line.me/ti/p/3Cbites.com",
     },
     {
       icon: <FaWhatsappSquare style={{ color: "#25D366" }} />,

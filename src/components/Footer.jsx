@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLine, FaLocationDot } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
 import QRCode from "react-qr-code";
 
 export default function Footer() {
@@ -20,12 +23,14 @@ export default function Footer() {
           <h4>{t("textQuick")}</h4>
           <ul className="footer-menu-items">
             <li>
+              <Link href="#menu">{t("textAbout")}</Link>
+            </li>{" "}
+            <li>
               <Link href="#menu">{t("textMenus")}</Link>
             </li>
             <li>
               <Link href="/">{t("textTrams")}</Link>
             </li>
-
             <li>
               <Link href="#contact">{t("textLocations")}</Link>
             </li>
@@ -34,14 +39,27 @@ export default function Footer() {
         <div className="footer-contact">
           <h4>{t("textContacts")}</h4>
           <div className="content">
-            <span>{t("textWork")}</span>
-            <strong>{t("textTime")}</strong>
+            {/* <span>{t("textWork")}</span> */}
+            <strong>
+              <HiOutlineMail />
+              {t("textTime")}
+            </strong>
             <br />
-            <strong>+66 644 287 510 </strong>
+            <strong>
+              <FaPhoneAlt />
+              +66 644 287 510{" "}
+            </strong>
             <br />
-            <strong>+66 644 286 608 </strong>
-            <span>{t("textAddress")}</span>
-            <strong>{t("textAdd")}</strong>
+            <strong>
+              <FaPhoneAlt /> +66 644 286 608{" "}
+            </strong>
+            {/* <span>{t("textAddress")}</span> */}
+            <strong className="add">
+              <FaLocationDot /> {t("textAdd")}
+            </strong>{" "}
+            <strong className="add">
+              <FaLine /> @3cbites
+            </strong>
           </div>
         </div>
         <div className="footer-qrc">
